@@ -1,0 +1,21 @@
+<div class="p-grid">
+  <h1>Oficios</h1>
+  <div *ngFor="let card of cards | async" [class]="getColSpanClass(card.cols)">
+    <p-card>
+      <ng-template pTemplate="header">
+        {{card.title}}
+        <button pButton icon="pi pi-ellipsis-v" class="p-button-text" [pMenu]="menu" aria-label="Toggle menu"></button>
+        <p-menu #menu>
+          <ng-template pTemplate="item">
+            <li pMenuItem label="Expand"></li>
+            <li pMenuItem label="Remove"></li>
+          </ng-template>
+        </p-menu>
+      </ng-template>
+
+      <div class="dashboard-card-content">
+        <p>Card Content Here</p>
+      </div>
+    </p-card>
+  </div>
+</div>

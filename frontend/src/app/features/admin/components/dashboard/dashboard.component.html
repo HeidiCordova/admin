@@ -1,0 +1,28 @@
+<p-card header="Resumen de Categorías" styleClass="ui-card-shadow">
+  <p-chart type="pie" [data]="categoriasChartData"></p-chart>
+</p-card>
+
+<p-card header="Resumen de Oficios" styleClass="ui-card-shadow">
+  <p-chart type="pie" [data]="oficiosChartData"></p-chart>
+</p-card>
+
+<p-card header="Últimos Usuarios" styleClass="ui-card-shadow">
+  <p-table [value]="ultimosUsuarios">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Fecha de Registro</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-usuario>
+      <tr>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.rol}}</td>
+        <td>{{usuario.fechaRegistro | date:'short'}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
